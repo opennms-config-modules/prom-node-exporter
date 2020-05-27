@@ -14,6 +14,11 @@
     <group-ref>node_exporter_filesystems</group-ref>
     <group-ref>node_exporter_loadavg</group-ref>
     <group-ref>node_exporter_memory</group-ref>
+    <group-ref>node_exporter_network</group-ref>
+    <group-ref>node_exporter_netstat</group-ref>
+    <group-ref>node_exporter_timex</group-ref>
+    <group-ref>node_exporter_go</group-ref>
+   
   </collection>
 
   <!--
