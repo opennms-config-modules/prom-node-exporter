@@ -63,4 +63,82 @@
     <numeric-attribute alias-exp="name.substring('node_filesystem_'.length())"/>
     <string-attribute alias="device" value-exp="labels[device]"/>
   </group>
+
+   <!--
+     node_network_iface_id{device="veth3edc17d"} 312
+     node_network_iface_id{device="vethaa78d75"} 310
+     node_network_iface_id{device="vethdd19a14"} 314
+     node_network_iface_link{device="br-90f3224a7885"} 308
+     node_network_iface_link{device="docker0"} 3
+     node_network_iface_link{device="ens18"} 2
+     node_network_iface_link{device="lo"} 1
+     node_network_receive_frame_total{device="vethaa78d75"} 0
+     node_network_receive_frame_total{device="vethdd19a14"} 0
+     node_network_receive_multicast_total{device="br-90f3224a7885"} 0
+   -->
+   <group name="node_exporter_network"
+     resource-type="nodeExporterNetwork"
+     filter-exp="name matches 'node_network_.*'"
+     group-by-exp="labels[device]">
+
+     <numeric-attribute alias-exp="name.substring('node_network_'.length())"/>
+     <string-attribute alias="device" value-exp="labels[device]"/>
+   </group>
+
+   <!--
+     node_netstat_IpExt_InOctets 4.0950776901e+10
+     node_netstat_IpExt_OutOctets 5.895420917e+09
+     node_netstat_Ip_Forwarding 1
+     node_netstat_TcpExt_ListenDrops 0
+     node_netstat_TcpExt_ListenOverflows 0
+   -->
+   <group name="node_exporter_netstat"
+     resource-type="node"
+     filter-exp="name matches 'node_netstat_.*'">
+
+     <numeric-attribute alias-exp="name.substring('node_'.length())"/>
+   </group>
+
+   <!--
+     node_sockstat_FRAG6_memory 0
+     node_sockstat_FRAG_inuse 0
+     node_sockstat_FRAG_memory 0
+     node_sockstat_RAW6_inuse 1
+     node_sockstat_RAW_inuse 0
+     node_sockstat_TCP6_inuse 11
+   -->
+   <group name="node_exporter_sockstat"
+     resource-type="node"
+     filter-exp="name matches 'node_sockstat_.*'">
+
+     <numeric-attribute alias-exp="name.substring('node_'.length())"/>
+   </group>
+
+   <!--
+     node_timex_estimated_error_seconds 0.000172
+     node_timex_frequency_adjustment_ratio 1.0000367144012452
+     node_timex_loop_time_constant 10
+     node_timex_maxerror_seconds 0.068022
+   -->
+   <group name="node_exporter_timex"
+     resource-type="node"
+     filter-exp="name matches 'node_timex_.*'">
+
+     <numeric-attribute alias-exp="name.substring('node_'.length())"/>
+   </group>
+
+  <!--
+     go_gc_duration_seconds_sum 3.360487897
+     go_gc_duration_seconds_count 19172
+     go_goroutines 9
+     go_info{version="go1.13.8"} 1
+     go_memstats_alloc_bytes 3.22536e+06
+  -->
+   <group name="node_exporter_go"
+     resource-type="node"
+     filter-exp="name matches 'go_.*'">
+
+     <numeric-attribute alias-exp="name"/>
+   </group>
+
 </prometheus-datacollection-config>
