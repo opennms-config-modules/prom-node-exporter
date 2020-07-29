@@ -1,18 +1,46 @@
 <?xml version="1.0"?>
 <resource-types>
-  <resourceType name="nodeExporterFilesystem" label="Filesystem" resourceLabel="Filesystem (${index})">
-    <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
-    <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
-  </resourceType>
+    <resourceType name="nodeExporterFilesystem" label="Filesystem"
+                  resourceLabel="(${mountpoint})">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
+    
+    <resourceType name="nodeExporterDisk" label="Disk"
+                  resourceLabel="(${device})">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+     </resourceType>
 
-  <resourceType name="nodeExporterDisk" label="Disk" resourceLabel="Disk (${index})">
-    <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
-    <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
-  </resourceType>
+    <resourceType name="nodeExporterCpu" label="CPU"
+                  resourceLabel="(${cpu})">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+     </resourceType>
 
-  <resourceType name="nodeExporterNetwork" label="Network" resourceLabel="Interface (${index})">
-    <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
-    <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
-  </resourceType>
+    <resourceType name="nodeExporterNetwork" label="Interface"
+                  resourceLabel="(${device})">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
+
+    <resourceType name="nodeExporterHwmon" label="Sensor"
+                  resourceLabel="(${sensor})">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
+
+    <resourceType name="nodeExporterNfs" label="NFS"
+                  resourceLabel="NFS (${index})">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
+
+    <resourceType name="nodeExporterSchedstat" label="Schedstat"
+                  resourceLabel="Schedstat (${index})">
+      <persistenceSelectorStrategy class="org.opennms.netmgt.collection.support.PersistAllSelectorStrategy"/>
+      <storageStrategy class="org.opennms.netmgt.collection.support.IndexStorageStrategy"/>
+    </resourceType>
 
 </resource-types>
+
