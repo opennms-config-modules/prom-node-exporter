@@ -172,13 +172,14 @@
      go_memstats_alloc_bytes 3.22536e+06
    -->
 
+   <!--
    <group name="node_exporter_go"
      resource-type="node"
      filter-exp="name matches 'go_.*'">
     
      <numeric-attribute alias-exp="name"/>
    </group>
-
+   -->
 
   <!--
     process_cpu_seconds_total 448.4
@@ -201,6 +202,7 @@
     node_hwmon_temp_crit_alarm_celsius{chip="platform_coretemp_0",sensor="temp2"} 0
   -->
 
+   <!--
    <group name="node_exporter_hwmon"
      resource-type="nodeExporterHwmon"
      filter-exp="name matches 'node_hwmon_temp_.*'"
@@ -210,7 +212,7 @@
      <string-attribute alias="sensor" value-exp="labels[sensor]"/>
 
    </group>
-
+   -->
    <!--
      node_schedstat_running_seconds_total{cpu="8"} 16833.132223289
      node_schedstat_running_seconds_total{cpu="9"} 16558.140752303
@@ -218,11 +220,12 @@
      node_schedstat_timeslices_total{cpu="1"} 1.56843272e+08
    -->
 
+   <!--
    <group name="node_exporter_schedstat"
      resource-type="nodeExporterSchedstat"
      filter-exp="name matches 'node_schedstat_.*'">
    
      <numeric-attribute alias-exp="name.substring('node_schedstat_'.length())"/>
    </group>
-
+   -->
 </prometheus-datacollection-config>
